@@ -1,0 +1,87 @@
+/* Container til alle knapper */
+#knap-container {
+    
+    display: flex;
+    flex-direction: row; /* Tilføjet denne linje */
+    position: fixed;
+    bottom: 10;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Juster denne værdi efter behov */
+    
+}
+
+/* Generel styling for alle knapper */
+#ByenOverKnap button,
+#AbejdeOverKnap button,
+#KøbOverKnap button,
+#FitnessOverKnap button {
+    flex: 1;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Specifik styling for hver knap */
+#ByenKnap {
+    background-color: #4CAF50; /* Grøn */
+    color: white;
+}
+
+#AbejdeKnap {
+    background-color: #008CBA; /* Blå */
+    color: white;
+}
+
+#KøbKnap {
+    background-color: #f44336; /* Rød */
+    color: white;
+}
+
+#FitnessKnap {
+    background-color: #FF9800; /* Orange */
+    color: white;
+}
+
+/* Hover effekt */
+#ByenOverKnap button:hover,
+#AbejdeOverKnap button:hover,
+#KøbOverKnap button:hover,
+#FitnessOverKnap button:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+/* Responsivt design */
+@media screen and (max-width: 600px) {
+    #knap-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #ByenOverKnap button,
+    #AbejdeOverKnap button,
+    #KøbOverKnap button,
+    #FitnessOverKnap button {
+        width: 100%;
+    }
+}
+
+#closeButton {
+    /* Her kan du tilføje dine CSS styles */
+    background-color: #ff5e91;; /* Rød baggrundsfarve for eksempel */
+    color: white; /* Hvid tekst */
+    /* Eksisterende stilarter */
+    position: fixed; /* Fastgør knappen til en position på skærmen */
+    left: 50%; /* Centrerer knappen horisontalt */
+    font-family: 'Poppins', sans-serif;
+    transform: translateX(-50%) translateY(50%); /* Flytter knappen op og centrere den horisontalt */
+    z-index: 1000; /* Sørger for at knappen ligger over andre elementer */
+    padding: 30px 150px; /* Større polstring for at gøre knappen større */
+    font-size: 2rem; /* Større skriftstørrelse, juster efter behov */
+    top: 80%; /* Placer knappen 80% fra toppen af skærmen */
+    border: none; /* Ingen kant */
+    border-radius: 10px; /* Afrundede hjørner */
+}
