@@ -1,3 +1,12 @@
 body {
   background-color: #00ff00; /* Lysegrøn */
 }
+#Deorant {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80%;
+  height: auto;
+  cursor: pointer;
+}
