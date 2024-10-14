@@ -1,6 +1,18 @@
+var Penge = window.parent.globalValues.minTekst;
+
 function KøbStort() {
+
+
+    
+
     window.parent.globalValues.købTeks += 1;
     window.parent.opdaterTekst('købTeks', window.parent.globalValues.købTeks + " Styrke");
+    document.getElementById('købTeks').textContent = window.parent.globalValues.købTeks + " Styrke";
+
+
+    window.parent.globalValues.købTeks += 1;
+    window.parent.opdaterTekst('købTeks', window.parent.globalValues.købTeks + " Styrke");
+    document.getElementById('købTeks').textContent = window.parent.globalValues.købTeks + " Styrke";
 }
 
 // Når iframe indlæses, skal vi initialisere værdierne fra window.parent
