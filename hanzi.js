@@ -3,13 +3,25 @@ window.globalValues = {
     minTekst: 0,
     købTeks: 0,
     arbejdeTekst: 0,
-    byenTekst: 0
+    byenTekst: 0,
+    dageGikTekst: 0
 };
+
+
+function DageGik() {
+    const dageGikTekst = document.getElementById('dageGikTekst');
+    window.globalValues.dageGikTekst += 1;
+    dageGikTekst.textContent = " Dag" + window.globalValues.dageGikTekst;
+}
+
 
 function Fitness() {
     const tekstElement = document.getElementById('minTekst');
     window.globalValues.minTekst += 1;
     tekstElement.textContent = window.globalValues.minTekst + " Styrke";
+
+    DageGik();
+    
 }
 
 function Køb() {

@@ -1,12 +1,24 @@
 body {
   background-color: #00ff00; /* Lysegrøn */
+  margin: 0;
+  padding: 10px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
-#Deorant {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 80%;
+
+.deorant-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#Deorant1, #Deorant2, #Deorant3, 
+#Deorant4, #Deorant5, #Deorant6, #Deorant7, #Deorant8, #Deorant9 {
+  width: 30%;
   height: auto;
+  object-fit: contain;
   cursor: pointer;
+  margin-bottom: 10px;
 }
