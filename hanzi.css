@@ -119,3 +119,20 @@ body {
     box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
 }
 
+#closeButton2 {
+    /* Her kan du tilføje dine CSS styles */
+    background-color: #ff5e91;; /* Rød baggrundsfarve for eksempel */
+    color: white; /* Hvid tekst */
+    /* Eksisterende stilarter */
+    position: fixed; /* Fastgør knappen til en position på skærmen */
+    left: 50%; /* Centrerer knappen horisontalt */
+    font-family: 'Poppins', sans-serif;
+    transform: translateX(-50%) translateY(50%); /* Flytter knappen op og centrere den horisontalt */
+    z-index: 1000; /* Sørger for at knappen ligger over andre elementer */
+    padding: 30px 150px; /* Større polstring for at gøre knappen større */
+    font-size: 2rem; /* Større skriftstørrelse, juster efter behov */
+    top: 80%; /* Placer knappen 80% fra toppen af skærmen */
+    border: none; /* Ingen kant */
+    border-radius: 10px; /* Afrundede hjørner */
+}
+

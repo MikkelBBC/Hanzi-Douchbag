@@ -21,6 +21,28 @@ function Fitness() {
     tekstElement.textContent = window.globalValues.minTekst + " Styrke";
 
     DageGik();
+
+
+    iframe2 = document.createElement('iframe');
+iframe2.src = 'FitnesSpil.html';
+iframe2.style.width = '100%';
+iframe2.style.height = '100%';
+iframe2.style.border = 'none';
+iframe2.style.position = 'absolute';
+iframe2.style.top = '50%';
+iframe2.style.left = '50%';
+iframe2.style.transform = 'translate(-50%, -50%)';
+
+document.getElementById('spilContatiner').appendChild(iframe2);
+
+var closeButton2 = document.createElement('button');
+closeButton2.id = 'closeButton2';
+closeButton2.textContent = 'Luk';
+closeButton2.addEventListener('click', closeSpinWheel2);
+document.getElementById('spilContatiner').appendChild(closeButton2);
+
+
+ 
     
 }
 
@@ -46,6 +68,13 @@ function Køb() {
 
 function closeSpinWheel() {
     iframe.parentNode.removeChild(iframe);
+    this.parentNode.removeChild(this);
+
+    
+}
+
+function closeSpinWheel2() {
+    iframe2.parentNode.removeChild(iframe2);
     this.parentNode.removeChild(this);
 }
 
