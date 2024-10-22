@@ -78,10 +78,33 @@ function closeSpinWheel2() {
     this.parentNode.removeChild(this);
 }
 
+function closeSpinWheel3() {
+    iframe3.parentNode.removeChild(iframe3);
+    this.parentNode.removeChild(this);
+}
+
 function Byen() {
     const byenTekst = document.getElementById('byenTekst');
     window.globalValues.byenTekst += 1;
     byenTekst.textContent = window.globalValues.byenTekst + " Byen";
+
+    iframe3 = document.createElement('iframe');
+    iframe3.src = 'Combat.html';
+    iframe3.style.width = '100%';
+    iframe3.style.height = '100%';
+    iframe3.style.border = 'none';
+    iframe3.style.position = 'absolute';
+    iframe3.style.top = '50%';
+    iframe3.style.left = '50%';
+    iframe3.style.transform = 'translate(-50%, -50%)';
+    
+    document.getElementById('spilContatiner').appendChild(iframe3);
+    
+    var closeButton3 = document.createElement('button');
+    closeButton3.id = 'closeButton3';
+    closeButton3.textContent = 'Luk';
+    closeButton3.addEventListener('click', closeSpinWheel3);
+    document.getElementById('spilContatiner').appendChild(closeButton3);
 }
 
 function Arbejde() {

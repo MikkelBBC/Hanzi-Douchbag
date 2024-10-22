@@ -1,0 +1,37 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tur-baseret Kampspil</title>
+    <link rel="stylesheet" href="Combat.css">
+</head>
+<body>
+    <div class="container">
+        <div class="status">
+            <div>
+                <h3>Spiller (HP: <span id="playerHp">100</span>)</h3>
+                <div class="health-bar">
+                    <div id="playerHealthBar" class="health-bar-fill"></div>
+                </div>
+            </div>
+            <div>
+                <h3>Computer (HP: <span id="enemyHp">100</span>)</h3>
+                <div class="health-bar">
+                    <div id="enemyHealthBar" class="health-bar-fill"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="actions">
+            <button onclick="performAction('attack')">Angrib (10-20 skade, 80% chance)</button>
+            <button onclick="performAction('heavyAttack')">Kraftigt Angreb (20-30 skade, 50% chance)</button>
+            <button onclick="performAction('heal')">Heal (15-25 HP, 70% chance)</button>
+            <button onclick="performAction('defend')">Forsvar (Reducerer næste angreb, 90% chance)</button>
+        </div>
+        
+        <div class="log" id="gameLog"></div>
+    </div>
+    <script src="Combat.js"></script>
+</body>
+</html>
