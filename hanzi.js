@@ -4,7 +4,8 @@ window.globalValues = {
     købTeks: 0,
     arbejdeTekst: 0,
     byenTekst: 0,
-    dageGikTekst: 0
+    dageGikTekst: 0,
+    Penge: 0
 };
 
 
@@ -83,6 +84,13 @@ function closeSpinWheel3() {
     this.parentNode.removeChild(this);
 }
 
+function closeSpinWheel4() {
+    iframe4.parentNode.removeChild(iframe4);
+    this.parentNode.removeChild(this);
+}
+
+
+
 function Byen() {
     const byenTekst = document.getElementById('byenTekst');
     window.globalValues.byenTekst += 1;
@@ -111,6 +119,25 @@ function Arbejde() {
     const arbejdeTekst = document.getElementById('arbejdeTekst');
     window.globalValues.arbejdeTekst += 1;
     arbejdeTekst.textContent = window.globalValues.arbejdeTekst + " Arbejde";
+
+    
+    iframe4 = document.createElement('iframe');
+    iframe4.src = 'Arbejde.html';
+    iframe4.style.width = '100%';
+    iframe4.style.height = '100%';
+    iframe4.style.border = 'none';
+    iframe4.style.position = 'absolute';
+    iframe4.style.top = '50%';
+    iframe4.style.left = '50%';
+    iframe4.style.transform = 'translate(-50%, -50%)';
+    
+    document.getElementById('spilContatiner').appendChild(iframe4);
+    
+    var closeButton4 = document.createElement('button');
+    closeButton4.id = 'closeButton4';
+    closeButton4.textContent = 'Luk';
+    closeButton4.addEventListener('click', closeSpinWheel4);
+    document.getElementById('spilContatiner').appendChild(closeButton4);
 }
 
 // Funktion til opdatering af tekst

@@ -1,0 +1,43 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Arbejds Simulator</title>
+    <link rel="stylesheet" href="Arbejde.css">
+</head>
+<body>
+    <div class="container">
+        <div class="stats">
+            <h2>Penge Tjent</h2>
+            <div class="stat-value">
+                <span id="money">0</span> kr
+            </div>
+            <h2>Arbejdsdage Fuldført</h2>
+            <div class="stat-value">
+                <span id="daysCompleted">0</span>
+            </div>
+        </div>
+
+        <div class="progress-container">
+            <h2>Dagens Fremskridt</h2>
+            <div class="progress-bar">
+                <div id="progressBar" class="progress-fill"></div>
+            </div>
+            <div class="time-left">
+                Timer tilbage af vagten: <span id="timeLeft">0</span>
+            </div>
+            <div class="daily-pay">
+                Dagens løn ved fuldførelse: <span id="dailyPay">3600</span> kr
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="startBtn" class="start" onclick="toggleWork()">Start Arbejde</button>
+        </div>
+
+        <div class="log" id="eventLog"></div>
+    </div>
+    <script src="Arbejde.js"></script>
+</body>
+</html>
