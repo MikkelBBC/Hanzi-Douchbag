@@ -1,3 +1,4 @@
+/* spil.css */
 body {
   background-color: #00ff00; /* Lysegrøn */
   margin: 0;
@@ -14,11 +15,21 @@ body {
   justify-content: space-around;
 }
 
-#Deorant1, #Deorant2, #Deorant3, 
-#Deorant4, #Deorant5, #Deorant6, #Deorant7, #Deorant8, #Deorant9 {
+.image-button {
   width: 30%;
   height: auto;
   object-fit: contain;
   cursor: pointer;
   margin-bottom: 10px;
+  transition: transform 0.2s; /* Tilføjer en smooth transition effekt */
+}
+
+.image-button:hover {
+  transform: scale(1.1); /* Gør billedet lidt større når musen holdes over */
+}
+
+/* Stil for købte items */
+.image-button[src*="DeoKøbt"] {
+  cursor: default;
+  opacity: 0.8; /* Gør købte items lidt mere matte */
 }

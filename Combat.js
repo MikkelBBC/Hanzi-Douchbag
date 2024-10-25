@@ -1,4 +1,9 @@
 // game.js
+var styrke = window.parent.globalValues.købTeks;
+
+
+
+
 const state = {
     playerHp: 100,
     enemyHp: 100,
@@ -49,7 +54,7 @@ const actions = {
     attack: {
         chance: 0.8,
         execute: () => {
-            const damage = random(10, 20);
+            const damage = random(10, styrke);
             return { damage, message: `Angreb gjorde ${damage} skade!` };
         }
     },
