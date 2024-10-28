@@ -1,12 +1,38 @@
 /* Container til alle knapper */
 
-body {
-    background-image: url('96to8k.gif');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
+/* Styling for video baggrund */
+#bgVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    object-fit: cover;
+}
+
+/* Tilføj en mørk overlay for bedre læsbarhed af indhold */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Juster alpha-værdien (0.5) for at ændre mørkhed */
+    z-index: -1;
+}
+
+/* Sørg for at andet indhold er synligt over videoen */
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+
+
 
 
 #knap-container {
