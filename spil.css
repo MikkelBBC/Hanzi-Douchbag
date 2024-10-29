@@ -1,12 +1,39 @@
-/* spil.css */
+/* Baggrundsimage styling */
 body {
-  background-color: #00ff00; /* Lysegrøn */
+  background-image: url('shop.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   margin: 0;
-  padding: 10px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Mørk overlay for bedre læsbarhed */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* Resten af din eksisterende CSS */
+.container {
+  position: relative;
+  z-index: 1;
+  /* ... resten af din container styling ... */
+}
+
+/* Sikrer mobilkompatibilitet */
+@media screen and (max-width: 412px) {
+  body {
+      background-attachment: scroll; /* Bedre performance på mobile */
+  }
 }
 
 .deorant-container {
@@ -33,3 +60,4 @@ body {
   cursor: default;
   opacity: 0.8; /* Gør købte items lidt mere matte */
 }
+
