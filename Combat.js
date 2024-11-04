@@ -1,12 +1,16 @@
 // game.js
 var styrke = window.parent.globalValues.købTeks;
 
+var Fjendensliv = random(50, 100);
 
 
+const fjendeNavne = ["Mørk Ridder", "Kæmpe Drage", "Ond Troldmand"];
+// Vælg et tilfældigt navn
+var FjendeNavn = fjendeNavne[Math.floor(Math.random() * fjendeNavne.length)];
 
 const state = {
     playerHp: 100,
-    enemyHp: 100,
+    enemyHp: Fjendensliv,
     isPlayerTurn: true,
     isDefending: false,
     gameOver: false
@@ -17,10 +21,16 @@ function random(min, max) {
 }
 
 function updateHealth() {
+    // Opdater HP værdier
     document.getElementById('playerHp').textContent = state.playerHp;
     document.getElementById('enemyHp').textContent = state.enemyHp;
+    
+    // Opdater health bars
     document.getElementById('playerHealthBar').style.width = `${state.playerHp}%`;
-    document.getElementById('enemyHealthBar').style.width = `${state.enemyHp}%`;
+    document.getElementById('enemyHealthBar').style.width = `${(state.enemyHp / Fjendensliv) * 100}%`;
+    
+    // Opdater fjendens navn
+    document.getElementById('enemyName').textContent = FjendeNavn;
 }
 
 function log(message) {
@@ -32,13 +42,13 @@ function log(message) {
 function checkGameOver() {
     if (state.playerHp <= 0) {
         state.gameOver = true;
-        log('Spillet er slut - Computeren vandt!');
+        log(`Spillet er slut - ${FjendeNavn}en vandt!`);
         disableButtons(true);
         return true;
     }
     if (state.enemyHp <= 0) {
         state.gameOver = true;
-        log('Tillykke! Du vandt!');
+        log(`Tillykke! Du besejrede ${FjendeNavn}en!`);
         disableButtons(true);
         return true;
     }
@@ -157,3 +167,4 @@ async function computerTurn() {
 
 // Initialiser health bars
 updateHealth();
+log(`En fjende dukker op med ${Fjendensliv} HP!`);

@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,26 +6,30 @@
     <link rel="stylesheet" href="Combat.css">
 </head>
 <body>
-
-    <video autoplay muted loop id="bgVideo" poster="fallback-image.jpg">
+    <video autoplay muted loop id="bgVideo">
         <source src="Party.mp4" type="video/mp4">
     </video>
-
-
+    
     <div class="container">
         <div class="status">
             <div>
-                <h3>Spiller (HP: <span id="playerHp">100</span>)</h3>
+                <h3><span id="playerName">Spiller</span> (HP: <span id="playerHp">100</span>)</h3>
                 <div class="health-bar">
                     <div id="playerHealthBar" class="health-bar-fill"></div>
                 </div>
             </div>
             <div>
-                <h3>Computer (HP: <span id="enemyHp">100</span>)</h3>
+                <h3><span id="enemyName">Computer</span> (HP: <span id="enemyHp">100</span>)</h3>
                 <div class="health-bar">
                     <div id="enemyHealthBar" class="health-bar-fill"></div>
                 </div>
             </div>
+        </div>
+        
+        <div class="deorant-container">
+            <img src="Peter.png" id="Deorant1" class="image-button">
+            <img src="VS.png" id="Deorant2" class="image-button">
+            <img src="Fjende1.png" id="Deorant3" class="image-button">
         </div>
         
         <div class="actions">
@@ -36,8 +39,9 @@
             <button onclick="performAction('defend')">Forsvar (Reducerer næste angreb, 90% chance)</button>
         </div>
         
-        <div class="log" id="gameLog"></div>
+        <div id="gameLog" class="log"></div>
     </div>
+    
     <script src="Combat.js"></script>
 </body>
 </html>

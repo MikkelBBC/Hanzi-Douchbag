@@ -195,3 +195,122 @@ body::before {
     border: none; /* Ingen kant */
     border-radius: 10px; /* Afrundede hjørner */
 }
+
+
+/* Stats Panel Container */
+.stats-panel {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #ff5e91;
+    box-shadow: 0 0 15px rgba(255, 94, 145, 0.3);
+    min-width: 300px;
+}
+
+/* Stats Header */
+.stats-header {
+    color: #ff5e91;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid #ff5e91;
+    padding-bottom: 10px;
+}
+
+/* Stats Grid Container */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+/* Common styling for all stat items */
+.stats-grid p {
+    margin: 0;
+    padding: 10px;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Individual stat styling */
+#minTekst {
+    color: #FF9800; /* Orange for strength */
+    border: 1px solid rgba(255, 152, 0, 0.3);
+}
+
+#købTeks {
+    color: #f44336; /* Red for purchases */
+    border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+#arbejdeTekst {
+    color: #008CBA; /* Blue for work */
+    border: 1px solid rgba(0, 140, 186, 0.3);
+}
+
+#byenTekst {
+    color: #4CAF50; /* Green for city */
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+#Penge {
+    color: #FFD700; /* Gold for money */
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    grid-column: 1 / -1; /* Spans full width */
+    font-size: 20px;
+}
+
+/* Days counter at the bottom */
+#dageGikTekst {
+    color: #00eaff;
+    grid-column: 1 / -1; /* Spans full width */
+    font-size: 22px;
+    border: 1px solid rgba(0, 234, 255, 0.3);
+}
+
+/* Hover effects for all stats */
+.stats-grid p:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+    .stats-panel {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        min-width: 0;
+    }
+    
+    .stats-grid p {
+        font-size: 16px;
+    }
+    
+    .stats-header {
+        font-size: 20px;
+    }
+}
+
+#StatsTekst {
+    color: rgb(68, 0, 255);
+    font-size: 30px;  /* Større tekst */
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.322);
+    padding: 20px 40px;
+    border-radius: 10px;
+    margin: 0;  /* Fjerner standard margin */
+}
