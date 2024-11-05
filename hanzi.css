@@ -314,3 +314,99 @@ body::before {
     border-radius: 10px;
     margin: 0;  /* Fjerner standard margin */
 }
+
+/* Tilføj dette til din eksisterende CSS */
+
+/* Container til træningsknapper */
+#træning-container {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 50%; /* Placerer dem i midten vertikalt */
+    left: 50%; /* Placerer dem i midten horisontalt */
+    transform: translate(-50%, -50%); /* Centrerer præcist */
+    gap: 15px; /* Mellemrum mellem knapperne */
+}
+
+/* Generel styling for alle træningsknapper */
+#TræningsAktiv1 button,
+#TræningsAktiv2 button,
+#TræningsAktiv3 button,
+#TræningsAktiv4 button {
+    flex: 1;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border-radius: 8px; /* Afrundede hjørner */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Skyggeeffekt */
+    text-transform: uppercase;
+    font-weight: bold;
+    min-width: 160px; /* Minimum bredde */
+}
+
+/* Specifik styling for hver træningsknap med forskellige grønne nuancer */
+#TræningsKnap1 {
+    background-color: #2ecc71; /* Smaragdgrøn */
+    color: white;
+}
+
+#TræningsKnap2 {
+    background-color: #27ae60; /* Mørkere grøn */
+    color: white;
+}
+
+#TræningsKnap3 {
+    background-color: #16a085; /* Havgrøn */
+    color: white;
+}
+
+#TræningsKnap4 {
+    background-color: #1abc9c; /* Turkisgrøn */
+    color: white;
+}
+
+/* Fancy hover effekter */
+#TræningsAktiv1 button:hover,
+#TræningsAktiv2 button:hover,
+#TræningsAktiv3 button:hover,
+#TræningsAktiv4 button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    filter: brightness(110%);
+}
+
+/* Active (klik) effekt */
+#TræningsAktiv1 button:active,
+#TræningsAktiv2 button:active,
+#TræningsAktiv3 button:active,
+#TræningsAktiv4 button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Tilføj glød effekt */
+#TræningsAktiv1 button,
+#TræningsAktiv2 button,
+#TræningsAktiv3 button,
+#TræningsAktiv4 button {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsivt design */
+@media screen and (max-width: 800px) {
+    #træning-container {
+        flex-direction: column;
+        width: 90%;
+        gap: 10px;
+    }
+
+    #TræningsAktiv1 button,
+    #TræningsAktiv2 button,
+    #TræningsAktiv3 button,
+    #TræningsAktiv4 button {
+        width: 100%;
+        padding: 12px 20px;
+    }
+}

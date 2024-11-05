@@ -4,9 +4,32 @@ var styrke = window.parent.globalValues.købTeks;
 var Fjendensliv = random(50, 100);
 
 
-const fjendeNavne = ["Mørk Ridder", "Kæmpe Drage", "Ond Troldmand"];
+const fjender = [
+    { 
+        navn: "Mørk Ridder", 
+        billede: "Fjende1.png",
+        liv: 1000,
+        Skade: 50
+    },
+    { 
+        navn: "Kæmpe Drage", 
+        billede: "Fjende2.png",
+        liv: 2000,
+        Skade: 100
+    },
+    { 
+        navn: "Ond Troldmand", 
+        billede: "Fjende3.png",
+        liv: 1500,
+        Skade: 1000
+    }
+];
 // Vælg et tilfældigt navn
-var FjendeNavn = fjendeNavne[Math.floor(Math.random() * fjendeNavne.length)];
+const valgtFjende = fjender[Math.floor(Math.random() * fjender.length)];
+var FjendeNavn = valgtFjende.navn;
+var FjendeBillede = valgtFjende.billede;
+var Fjendensliv = valgtFjende.liv;  // Bruger nu det fastlagte liv i stedet for random
+var Fjendeskade = valgtFjende.Skade;
 
 const state = {
     playerHp: 100,
@@ -21,16 +44,17 @@ function random(min, max) {
 }
 
 function updateHealth() {
-    // Opdater HP værdier
-    document.getElementById('playerHp').textContent = state.playerHp;
-    document.getElementById('enemyHp').textContent = state.enemyHp;
-    
-    // Opdater health bars
-    document.getElementById('playerHealthBar').style.width = `${state.playerHp}%`;
-    document.getElementById('enemyHealthBar').style.width = `${(state.enemyHp / Fjendensliv) * 100}%`;
-    
-    // Opdater fjendens navn
-    document.getElementById('enemyName').textContent = FjendeNavn;
+     // Opdater HP værdier
+     document.getElementById('playerHp').textContent = state.playerHp;
+     document.getElementById('enemyHp').textContent = state.enemyHp;
+     
+     // Opdater health bars
+     document.getElementById('playerHealthBar').style.width = `${state.playerHp}%`;
+     document.getElementById('enemyHealthBar').style.width = `${(state.enemyHp / Fjendensliv) * 100}%`;
+     
+     // Opdater fjendens navn og billede
+     document.getElementById('enemyName').textContent = FjendeNavn;
+     document.getElementById('Deorant3').src = FjendeBillede;
 }
 
 function log(message) {
@@ -130,20 +154,20 @@ async function computerTurn() {
     if (Math.random() <= 0.7) { // Computer har 70% chance for at ramme
         switch(actionType) {
             case 'attack':
-                const damage = random(10, 20);
+                const damage = random(Fjendeskade, 20+Fjendeskade);
                 const actualDamage = state.isDefending ? Math.floor(damage / 2) : damage;
                 state.playerHp = Math.max(0, state.playerHp - actualDamage);
                 log(`Computer: Angreb gjorde ${actualDamage} skade!${state.isDefending ? ' (Reduceret af forsvar)' : ''}`);
                 break;
             case 'heavyAttack':
-                const heavyDamage = random(20, 30);
+                const heavyDamage = random(10+Fjendeskade, 30+Fjendeskade);
                 const actualHeavyDamage = state.isDefending ? Math.floor(heavyDamage / 2) : heavyDamage;
                 state.playerHp = Math.max(0, state.playerHp - actualHeavyDamage);
                 log(`Computer: Kraftigt angreb gjorde ${actualHeavyDamage} skade!${state.isDefending ? ' (Reduceret af forsvar)' : ''}`);
                 break;
             case 'heal':
                 const heal = random(15, 25);
-                state.enemyHp = Math.min(100, state.enemyHp + heal);
+                state.enemyHp = Math.min(state.enemyHp + heal);
                 log(`Computer: Healede ${heal} HP!`);
                 break;
             case 'defend':

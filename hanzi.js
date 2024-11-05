@@ -17,34 +17,56 @@ function DageGik() {
 
 
 function Fitness() {
-    const tekstElement = document.getElementById('minTekst');
-    window.globalValues.minTekst += 1;
-    tekstElement.textContent = window.globalValues.minTekst + " Styrke";
+    //const tekstElement = document.getElementById('minTekst');
+    //window.globalValues.minTekst += 1;
+    //tekstElement.textContent = window.globalValues.minTekst + " Styrke";
 
     DageGik();
 
 
-    iframe2 = document.createElement('iframe');
-iframe2.src = 'FitnesSpil.html';
-iframe2.style.width = '100%';
-iframe2.style.height = '100%';
-iframe2.style.border = 'none';
-iframe2.style.position = 'absolute';
-iframe2.style.top = '50%';
-iframe2.style.left = '50%';
-iframe2.style.transform = 'translate(-50%, -50%)';
+    //iframe2 = document.createElement('iframe');
+    //iframe2.src = 'FitnesSpil.html';
+    //iframe2.style.width = '100%';
+    //iframe2.style.height = '100%';
+    //iframe2.style.border = 'none';
+    //iframe2.style.position = 'absolute';
+    //iframe2.style.top = '50%';
+    //iframe2.style.left = '50%';
+    //iframe2.style.transform = 'translate(-50%, -50%)';
 
-document.getElementById('spilContatiner').appendChild(iframe2);
+    //document.getElementById('spilContatiner').appendChild(iframe2);
 
-var closeButton2 = document.createElement('button');
-closeButton2.id = 'closeButton2';
-closeButton2.textContent = 'Luk';
-closeButton2.addEventListener('click', closeSpinWheel2);
-document.getElementById('spilContatiner').appendChild(closeButton2);
+    //var closeButton2 = document.createElement('button');
+    //closeButton2.id = 'closeButton2';
+    //closeButton2.textContent = 'Luk';
+    //closeButton2.addEventListener('click', closeSpinWheel2);
+    //document.getElementById('spilContatiner').appendChild(closeButton2);
 
 
- 
+    skjulAlleKnapper()
+    visTræningsknapper()
     
+}
+
+function skjulAlleKnapper() {
+    document.getElementById('ByenOverKnap').style.display = 'none';
+    document.getElementById('AbejdeOverKnap').style.display = 'none';
+    document.getElementById('KøbOverKnap').style.display = 'none';
+    document.getElementById('FitnessOverKnap').style.display = 'none';
+}
+
+function visTræningsknapper() {
+    document.getElementById('TræningsAktiv1').style.display = 'block';
+    document.getElementById('TræningsAktiv2').style.display = 'block';
+    document.getElementById('TræningsAktiv3').style.display = 'block';
+    document.getElementById('TræningsAktiv4').style.display = 'block';
+}
+
+function visAlleKnapper() {
+    document.getElementById('ByenOverKnap').style.display = 'block';
+    document.getElementById('AbejdeOverKnap').style.display = 'block';
+    document.getElementById('KøbOverKnap').style.display = 'block';
+    document.getElementById('FitnessOverKnap').style.display = 'block';
 }
 
 function Køb() {
