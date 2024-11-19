@@ -8,6 +8,56 @@ window.globalValues = {
     Penge: 0
 };
 
+// Tilføj dette i starten af din hanzi.js fil
+
+// Array med stier til dine billeder
+const introBilleder = [
+    '1.jpg',  // Erstat med dine faktiske billednavne
+    '2.jpg',
+    '3.jpg',
+    '4.jpg',
+    '5.jpg'
+];
+
+let currentBilledeIndex = 0;
+const billedeContainer = document.getElementById('intro-billeder');
+
+// Funktion til at vise næste billede
+function visBillede() {
+    if (currentBilledeIndex < introBilleder.length) {
+        // Fjern tidligere billede hvis det findes
+        billedeContainer.innerHTML = '';
+        
+        // Opret nyt billede
+        const img = document.createElement('img');
+        img.src = introBilleder[currentBilledeIndex];
+        img.style.maxWidth = '80%';
+        img.style.maxHeight = '80vh';
+        img.style.display = 'block';
+        img.style.margin = 'auto';
+        img.style.boxShadow = '0 0 20px rgba(0,0,0,0.5)';
+        
+        // Tilføj billede til containeren
+        billedeContainer.appendChild(img);
+        
+        // Gå til næste billede efter 5 sekunder
+        currentBilledeIndex++;
+        setTimeout(() => {
+            if (currentBilledeIndex < introBilleder.length) {
+                visBillede();
+            } else {
+                // Fjern container når alle billeder er vist
+                billedeContainer.remove();
+            }
+        }, 10000);
+    }
+}
+
+// Start billedvisningen når siden indlæses
+window.addEventListener('load', function() {
+    visBillede();
+});
+
 
 function DageGik() {
     const dageGikTekst = document.getElementById('dageGikTekst');
@@ -16,7 +66,15 @@ function DageGik() {
 }
 
 
+
+
 function Fitness() {
+
+    var closeButton5 = document.createElement('button');
+    closeButton5.id = 'closeButton5';
+    closeButton5.textContent = 'Luk';
+    closeButton5.addEventListener('click', closeSpinWheel5);
+    document.getElementById('spilContatiner').appendChild(closeButton5);
     //const tekstElement = document.getElementById('minTekst');
     //window.globalValues.minTekst += 1;
     //tekstElement.textContent = window.globalValues.minTekst + " Styrke";
@@ -69,6 +127,13 @@ function visAlleKnapper() {
     document.getElementById('FitnessOverKnap').style.display = 'block';
 }
 
+function skjulTræningsknapper() {
+    document.getElementById('TræningsAktiv1').style.display = 'none';
+    document.getElementById('TræningsAktiv2').style.display = 'none';
+    document.getElementById('TræningsAktiv3').style.display = 'none';
+    document.getElementById('TræningsAktiv4').style.display = 'none';
+}
+
 function Køb() {
     iframe = document.createElement('iframe');
     iframe.src = 'spil.html';
@@ -109,6 +174,16 @@ function closeSpinWheel3() {
 function closeSpinWheel4() {
     iframe4.parentNode.removeChild(iframe4);
     this.parentNode.removeChild(this);
+}
+
+function closeSpinWheel5() {
+    skjulTræningsknapper()
+    visAlleKnapper()
+    this.parentNode.removeChild(this);
+
+
+
+   
 }
 
 
@@ -165,4 +240,21 @@ function Arbejde() {
 // Funktion til opdatering af tekst
 function opdaterTekst(id, værdi) {
     document.getElementById(id).textContent = værdi;
+}
+
+
+function Træning1(){
+    iframe5 = document.createElement('iframe');
+    iframe5.src = 'Træning1.html';
+    iframe5.style.width = '100%';
+    iframe5.style.height = '100%';
+    iframe5.style.border = 'none';
+    iframe5.style.position = 'absolute';
+    iframe5.style.top = '50%';
+    iframe5.style.left = '50%';
+    iframe5.style.transform = 'translate(-50%, -50%)';
+
+    document.getElementById('spilContatiner').appendChild(iframe5);
+
+   
 }
