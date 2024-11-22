@@ -1,3 +1,6 @@
+let ifram6true = false;
+let ifram5true = false;
+
 // Globale variabler
 window.globalValues = {
     minTekst: 0,
@@ -49,7 +52,7 @@ function visBillede() {
                 // Fjern container når alle billeder er vist
                 billedeContainer.remove();
             }
-        }, 10000);
+        }, 100);
     }
 }
 
@@ -69,6 +72,9 @@ function DageGik() {
 
 
 function Fitness() {
+
+     ifram6true = false;
+     ifram5true = false;
 
     var closeButton5 = document.createElement('button');
     closeButton5.id = 'closeButton5';
@@ -180,6 +186,17 @@ function closeSpinWheel5() {
     skjulTræningsknapper()
     visAlleKnapper()
     this.parentNode.removeChild(this);
+    
+    if(ifram5true){
+        iframe5.parentNode.removeChild(iframe5);
+    }
+    if(ifram6true){
+    
+    
+   
+        iframe6.parentNode.removeChild(iframe6);
+    }
+   
 
 
 
@@ -242,10 +259,11 @@ function opdaterTekst(id, værdi) {
     document.getElementById(id).textContent = værdi;
 }
 
+var iframe5;
 
 function Træning1(){
     iframe5 = document.createElement('iframe');
-    iframe5.src = 'Træning1.html';
+    iframe5.src = 'Lykkehjul.html';
     iframe5.style.width = '100%';
     iframe5.style.height = '100%';
     iframe5.style.border = 'none';
@@ -255,6 +273,25 @@ function Træning1(){
     iframe5.style.transform = 'translate(-50%, -50%)';
 
     document.getElementById('spilContatiner').appendChild(iframe5);
+    ifram5true = true;
 
    
+}
+
+var iframe6;
+
+function Træning2(){
+    iframe6 = document.createElement('iframe');
+    iframe6.src = 'Lykkehjul.html';
+    iframe6.style.width = '100%';
+    iframe6.style.height = '100%';
+    iframe6.style.border = 'none';
+    iframe6.style.position = 'absolute';
+    iframe6.style.top = '50%';
+    iframe6.style.left = '50%';
+    iframe6.style.transform = 'translate(-50%, -50%)';
+
+    document.getElementById('spilContatiner').appendChild(iframe6);
+    ifram6true = true;
+    
 }
