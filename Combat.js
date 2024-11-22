@@ -1,7 +1,11 @@
 // game.js
 var styrke = window.parent.globalValues.købTeks;
 
+
+
 var Fjendensliv = random(50, 100);
+
+
 
 
 const fjender = [

@@ -85,7 +85,7 @@ function Fitness() {
     //window.globalValues.minTekst += 1;
     //tekstElement.textContent = window.globalValues.minTekst + " Styrke";
 
-    DageGik();
+    
 
 
     //iframe2 = document.createElement('iframe');
@@ -158,6 +158,8 @@ function Køb() {
     closeButton.textContent = 'Luk';
     closeButton.addEventListener('click', closeSpinWheel);
     document.getElementById('spilContatiner').appendChild(closeButton);
+
+    DageGik();
 }
 
 function closeSpinWheel() {
@@ -227,6 +229,8 @@ function Byen() {
     closeButton3.textContent = 'Luk';
     closeButton3.addEventListener('click', closeSpinWheel3);
     document.getElementById('spilContatiner').appendChild(closeButton3);
+
+    DageGik();
 }
 
 function Arbejde() {
